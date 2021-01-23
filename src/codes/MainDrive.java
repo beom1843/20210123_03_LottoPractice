@@ -8,7 +8,16 @@ public class MainDrive {
 //		 깃허브 연동 프로젝트
 
 		Scanner myScanner = new Scanner(System.in);
-
+		
+//		랜덤 당첨번호 선정
+	int arr0[] = new int[6];
+			for(int i = 0 ; i<6 ; i++) {
+				 arr0[i] = (int)(Math.random()*45)+1;
+			}
+//			5개의 번호를 맞췄을 때 2등 판별
+			int bonusNum = (int)(Math.random()*45)+1;
+		
+			
 //		6개의 숫자를 저장할 배열 만들기
 		int arr[] = new int[6];
 //		횟수를 6번으로 제한할 변수
