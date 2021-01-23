@@ -62,10 +62,11 @@ public class MainDrive {
 				}
 			}
 
-			for (int num : arr) {
-				System.out.println(num);
-			}
 
+
+		}
+		for (int num : arr) {
+			System.out.println(num);
 		}
 	}
 }
