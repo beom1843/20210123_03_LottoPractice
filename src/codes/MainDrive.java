@@ -50,8 +50,15 @@ public class MainDrive {
 //			올바른 결과가 들어갔으면 while문을 종료.
 //			다음 자리의 숫자를 받으러 이동.
 					break;
-				} else {
-					System.out.println("다시 입력하세요");
+				} else if(!isRangeOk){
+//					범위 검사에 실패했다면
+					
+					System.out.println("1~45의 숫자만 입력 가능합니다.");
+				}
+				else {
+//					범위는 맞았다면
+					System.out.println("이미 입력된 번호입니다.");
+					System.out.println("다른 숫자로 입력해주세요.");
 				}
 			}
 
