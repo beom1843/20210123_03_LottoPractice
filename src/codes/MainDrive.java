@@ -70,14 +70,12 @@ public class MainDrive {
 					System.out.println("다른 숫자로 입력해주세요.");
 				}
 				
-				System.out.println("보너스 번호를 입력하세요");
-				bonusNum0 = myScanner.nextInt();
+
 			}
-
-
 
 		}
 		
+
 		for(int i = 0 ; i<arr.length-1 ; i++) {
 			for(int j = 0 ; j <arr.length-1;j++) {
 				if(arr[j]<arr[j+1]) {
@@ -87,11 +85,11 @@ public class MainDrive {
 				}
 			}
 		}
-		
+		System.out.print("내 번호{");
 		for (int num : arr) {
-			System.out.println(num);
+			System.out.print(num+",");
 		}
-		
+		System.out.print("}");
 //		내가 입력한 숫자들과 당첨번호들을 비교, 몇 개 맞췄는지? 결과로 획득.
 		
 		int corCount = 0;
@@ -112,14 +110,30 @@ public class MainDrive {
 		
 		switch(corCount){
 		case 6 : System.out.println("1등입니다.");
-		case 5 : if(bonusNum == bonusNum0) {
+		case 5 : 
+//			내 번호 목록을 다시 확인하여 보너스번호와 비교
+	
+			boolean isbonusNum = false;
+			for(int myNum : arr) {
+			if(myNum == bonusNum) {
+				isbonusNum =true;
+			}
+			}
+if(isbonusNum == true) {
 			System.out.println("2등입니다.");
+		}else {System.out.println("3등입니다.");
 		}
-			
 		case 4: System.out.println("4등입니다.");
 		case 3: System.out.println("5등입니다.");
+		default : System.out.println("꽝");
 		}
 		
+		System.out.print("당첨 번호{");
+		for (int num : arr0) {
+			System.out.print(num+",");
+		}
+		System.out.print("보너스번호:"+bonusNum);
+		System.out.print("}");
 		
 	}
 }
