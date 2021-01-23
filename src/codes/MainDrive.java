@@ -42,8 +42,8 @@ public class MainDrive {
 					}
 				}
 				
-				if (isRangeOk) {
-//			검사2 : 
+				if (isRangeOk && isDuplOk) {
+//			범위도 OK고 중복여부도 통과해야
 //			배열에 저장
 
 					arr[i] = input;
