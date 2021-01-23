@@ -19,6 +19,9 @@ public class MainDrive {
 			arr[i] = input;
 		}
 		
+		for(int num : arr) {
+			System.out.println(num);
+		}
 		
 
 	}
