@@ -16,7 +16,7 @@ public class MainDrive {
 			}
 //			5개의 번호를 맞췄을 때 2등 판별
 			int bonusNum = (int)(Math.random()*45)+1;
-		
+			int bonusNum0 =0;
 			
 //		6개의 숫자를 저장할 배열 만들기
 		int arr[] = new int[6];
@@ -69,6 +69,9 @@ public class MainDrive {
 					System.out.println("이미 입력된 번호입니다.");
 					System.out.println("다른 숫자로 입력해주세요.");
 				}
+				
+				System.out.println("보너스 번호를 입력하세요");
+				bonusNum0 = myScanner.nextInt();
 			}
 
 
@@ -88,5 +91,35 @@ public class MainDrive {
 		for (int num : arr) {
 			System.out.println(num);
 		}
+		
+//		내가 입력한 숫자들과 당첨번호들을 비교, 몇 개 맞췄는지? 결과로 획득.
+		
+		int corCount = 0;
+//		내 번호 하나를 당첨번호 6개와 비교
+		for (int myNum : arr) {
+//			당첨번호 6개 반복
+			for (int winNum : arr0) {
+				
+				if(myNum == winNum) {
+					
+					corCount++;
+					
+				}
+			}
+		}
+		
+//		corCount 기록돼있음.
+		
+		switch(corCount){
+		case 6 : System.out.println("1등입니다.");
+		case 5 : if(bonusNum == bonusNum0) {
+			System.out.println("2등입니다.");
+		}
+			
+		case 4: System.out.println("4등입니다.");
+		case 3: System.out.println("5등입니다.");
+		}
+		
+		
 	}
 }
